@@ -343,20 +343,207 @@ public class GmoCloud {
     }
 
     //----------------------------------------------------------------------------------------------------
-    // TODO Network Interfaces
+    // Network Interfaces
     //----------------------------------------------------------------------------------------------------
 
-    //----------------------------------------------------------------------------------------------------
-    // TODO Network
-    //----------------------------------------------------------------------------------------------------
+    public String listNetworkInterfacesJson(String Identifier)
+            throws InvalidKeyException, NoSuchAlgorithmException, IOException {
+        TreeMap<String, String> queryParameters = createQueryParameters("listNetworkInterfaces");
+        addMandatoryParameter(queryParameters, "Identifier", Identifier);
+        return executeGetRequest(queryParameters);
+    }
+
+    public String attachNetworkInterfaceJson(String Identifier,
+                                             String label,
+                                             int rate_limit,
+                                             String network_id,
+                                             int primary)
+            throws InvalidKeyException, NoSuchAlgorithmException, IOException {
+        TreeMap<String, String> queryParameters = createQueryParameters("attachNetworkInterface");
+        addMandatoryParameter(queryParameters, "Identifier", Identifier);
+        addMandatoryParameter(queryParameters, "label", label);
+        addMandatoryParameter(queryParameters, "rate_limit", rate_limit);
+        addMandatoryParameter(queryParameters, "network_id", network_id);
+        addMandatoryParameter(queryParameters, "primary", primary);
+        return executeGetRequest(queryParameters);
+    }
+
+    public String editNetworkInterfaceJson(String Identifier,
+                                           String label,
+                                           String network_interface_id,
+                                           Integer rate_limit)
+            throws InvalidKeyException, NoSuchAlgorithmException, IOException {
+        TreeMap<String, String> queryParameters = createQueryParameters("editNetworkInterface");
+        addMandatoryParameter(queryParameters, "Identifier", Identifier);
+        addOptionalParameter(queryParameters, "label", label);
+        addMandatoryParameter(queryParameters, "network_interface_id", network_interface_id);
+        addOptionalParameter(queryParameters, "rate_limit", rate_limit);
+        return executeGetRequest(queryParameters);
+    }
+
+    public String detachNetworkInterfaceJson(String Identifier,
+                                             String network_interface_id)
+            throws InvalidKeyException, NoSuchAlgorithmException, IOException {
+        TreeMap<String, String> queryParameters = createQueryParameters("detachNetworkInterface");
+        addMandatoryParameter(queryParameters, "Identifier", Identifier);
+        addMandatoryParameter(queryParameters, "network_interface_id", network_interface_id);
+        return executeGetRequest(queryParameters);
+    }
 
     //----------------------------------------------------------------------------------------------------
-    // TODO IP Address
+    // Network
     //----------------------------------------------------------------------------------------------------
 
+    public String listNetworksJSON(String Identifier)
+            throws InvalidKeyException, NoSuchAlgorithmException, IOException {
+        TreeMap<String, String> queryParameters = createQueryParameters("listNetworks");
+        return executeGetRequest(queryParameters);
+    }
+
+    public String getNetworkJSON(String network_id,
+                                 String Identifier)
+            throws InvalidKeyException, NoSuchAlgorithmException, IOException {
+        TreeMap<String, String> queryParameters = createQueryParameters("getNetwork");
+        addMandatoryParameter(queryParameters, "network_id", network_id);
+        addOptionalParameter(queryParameters, "Identifier", Identifier);
+        return executeGetRequest(queryParameters);
+    }
+
+    public String rebuildNetworkJSON(String Identifier)
+            throws InvalidKeyException, NoSuchAlgorithmException, IOException {
+        TreeMap<String, String> queryParameters = createQueryParameters("rebuildNetwork");
+        addMandatoryParameter(queryParameters, "Identifier", Identifier);
+        return executeGetRequest(queryParameters);
+    }
+
     //----------------------------------------------------------------------------------------------------
-    // TODO Firewall Rule
+    // IP Address
     //----------------------------------------------------------------------------------------------------
+
+    public String listIpAddressesJSON(String network_id,
+                                      String free,
+                                      String Identifier)
+            throws InvalidKeyException, NoSuchAlgorithmException, IOException {
+        TreeMap<String, String> queryParameters = createQueryParameters("listIpAddresses");
+        addMandatoryParameter(queryParameters, "network_id", network_id);
+        addOptionalParameter(queryParameters, "free", free);
+        addOptionalParameter(queryParameters, "Identifier", Identifier);
+        return executeGetRequest(queryParameters);
+    }
+
+    public String getIpAddressJSON(String network_id,
+                                   String Identifier,
+                                   String ip_address_id)
+            throws InvalidKeyException, NoSuchAlgorithmException, IOException {
+        TreeMap<String, String> queryParameters = createQueryParameters("getIpAddress");
+        addMandatoryParameter(queryParameters, "network_id", network_id);
+        addOptionalParameter(queryParameters, "Identifier", Identifier);
+        addMandatoryParameter(queryParameters, "ip_address_id", ip_address_id);
+        return executeGetRequest(queryParameters);
+    }
+
+    public String addIpJSON(String Identifier,
+                            String ip_address_id,
+                            String network_interface_id)
+            throws InvalidKeyException, NoSuchAlgorithmException, IOException {
+        TreeMap<String, String> queryParameters = createQueryParameters("addIp");
+        addMandatoryParameter(queryParameters, "Identifier", Identifier);
+        addOptionalParameter(queryParameters, "ip_address_id", ip_address_id);
+        addMandatoryParameter(queryParameters, "network_interface_id", network_interface_id);
+        return executeGetRequest(queryParameters);
+    }
+
+    public String deleteIpJSON(String Identifier,
+                               String ip_address_id)
+            throws InvalidKeyException, NoSuchAlgorithmException, IOException {
+        TreeMap<String, String> queryParameters = createQueryParameters("deleteIp");
+        addMandatoryParameter(queryParameters, "Identifier", Identifier);
+        addMandatoryParameter(queryParameters, "ip_address_id", ip_address_id);
+        return executeGetRequest(queryParameters);
+    }
+
+    //----------------------------------------------------------------------------------------------------
+    // Firewall Rule
+    //----------------------------------------------------------------------------------------------------
+
+    public String listFirewallsJSON(String Identifier)
+            throws InvalidKeyException, NoSuchAlgorithmException, IOException {
+        TreeMap<String, String> queryParameters = createQueryParameters("listFirewalls");
+        addMandatoryParameter(queryParameters, "Identifier", Identifier);
+        return executeGetRequest(queryParameters);
+    }
+
+    public String getFirewallJSON(String Identifier,
+                                  String firewall_id)
+            throws InvalidKeyException, NoSuchAlgorithmException, IOException {
+        TreeMap<String, String> queryParameters = createQueryParameters("getFirewall");
+        addMandatoryParameter(queryParameters, "Identifier", Identifier);
+        addMandatoryParameter(queryParameters, "firewall_id", firewall_id);
+        return executeGetRequest(queryParameters);
+    }
+
+    public String addFirewallJSON(String Identifier,
+                                  String address,
+                                  String command,
+                                  String port,
+                                  String protocol,
+                                  String network_interface_id)
+            throws InvalidKeyException, NoSuchAlgorithmException, IOException {
+        TreeMap<String, String> queryParameters = createQueryParameters("addFirewall");
+        addMandatoryParameter(queryParameters, "Identifier", Identifier);
+        addMandatoryParameter(queryParameters, "address", address);
+        addMandatoryParameter(queryParameters, "command", command);
+        addMandatoryParameter(queryParameters, "port", port);
+        addMandatoryParameter(queryParameters, "protocol", protocol);
+        addMandatoryParameter(queryParameters, "network_interface_id", network_interface_id);
+        return executeGetRequest(queryParameters);
+    }
+
+    public String editFirewallJSON(String Identifier,
+                                   String address,
+                                   String command,
+                                   String firewall_id,
+                                   String network_interface_id,
+                                   String port,
+                                   String protocol)
+            throws InvalidKeyException, NoSuchAlgorithmException, IOException {
+        TreeMap<String, String> queryParameters = createQueryParameters("editFirewall");
+        addMandatoryParameter(queryParameters, "Identifier", Identifier);
+        addMandatoryParameter(queryParameters, "address", address);
+        addMandatoryParameter(queryParameters, "command", command);
+        addMandatoryParameter(queryParameters, "firewall_id", firewall_id);
+        addMandatoryParameter(queryParameters, "network_interface_id", network_interface_id);
+        addOptionalParameter(queryParameters, "port", port);
+        addOptionalParameter(queryParameters, "protocol", protocol);
+        return executeGetRequest(queryParameters);
+    }
+
+    public String deleteFirewallJSON(String Identifier,
+                                     String firewall_id)
+            throws InvalidKeyException, NoSuchAlgorithmException, IOException {
+        TreeMap<String, String> queryParameters = createQueryParameters("deleteFirewall");
+        addMandatoryParameter(queryParameters, "Identifier", Identifier);
+        addMandatoryParameter(queryParameters, "firewall_id", firewall_id);
+        return executeGetRequest(queryParameters);
+    }
+
+    public String setFirewallDefaultJSON(String Identifier,
+                                         String default_firewall_rule,
+                                         String network_interface_id)
+            throws InvalidKeyException, NoSuchAlgorithmException, IOException {
+        TreeMap<String, String> queryParameters = createQueryParameters("setFirewallDefault");
+        addMandatoryParameter(queryParameters, "Identifier", Identifier);
+        addMandatoryParameter(queryParameters, "default_firewall_rule", default_firewall_rule);
+        addOptionalParameter(queryParameters, "network_interface_id", network_interface_id);
+        return executeGetRequest(queryParameters);
+    }
+
+    public String applyFirewallJSON(String Identifier)
+            throws InvalidKeyException, NoSuchAlgorithmException, IOException {
+        TreeMap<String, String> queryParameters = createQueryParameters("applyFirewall");
+        addMandatoryParameter(queryParameters, "Identifier", Identifier);
+        return executeGetRequest(queryParameters);
+    }
 
     //----------------------------------------------------------------------------------------------------
     // Templates
@@ -497,7 +684,7 @@ public class GmoCloud {
 
     private String toSignature(String httpMethod, String queryString)
             throws NoSuchAlgorithmException, InvalidKeyException {
-        return calcSignature(secretAccessKey, httpMethod + "\n" +
+        return calcHmacSHA256(secretAccessKey, httpMethod + "\n" +
                 DOMAIN + "\n" + "/" + cloudZoneID + "/\n" + queryString);
     }
 
@@ -509,7 +696,7 @@ public class GmoCloud {
         }
     }
 
-    private static String calcSignature(String key, String data)
+    private static String calcHmacSHA256(String key, String data)
             throws NoSuchAlgorithmException, InvalidKeyException {
         byte[] keyBytes;
         try {
