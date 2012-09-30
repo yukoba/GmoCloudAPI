@@ -74,7 +74,7 @@ public class GmoCloud {
         return executeGetRequest(queryParameters);
     }
 
-    public String listNodeTransactionLogsJSON(String Identifier)
+    public String listNodeTransactionLogsJson(String Identifier)
             throws InvalidKeyException, NoSuchAlgorithmException, IOException {
         TreeMap<String, String> queryParameters = createQueryParameters("listNodeTransactionLogs");
         addMandatoryParameter(queryParameters, "Identifier", Identifier);
@@ -85,13 +85,13 @@ public class GmoCloud {
     // Hypervisor
     //----------------------------------------------------------------------------------------------------
 
-    public String listHypervisorsJSON()
+    public String listHypervisorsJson()
             throws InvalidKeyException, NoSuchAlgorithmException, IOException {
         TreeMap<String, String> queryParameters = createQueryParameters("listHypervisors");
         return executeGetRequest(queryParameters);
     }
 
-    public String getHypervisorJSON(String hypervisor_id)
+    public String getHypervisorJson(String hypervisor_id)
             throws InvalidKeyException, NoSuchAlgorithmException, IOException {
         TreeMap<String, String> queryParameters = createQueryParameters("getHypervisor");
         addMandatoryParameter(queryParameters, "hypervisor_id", hypervisor_id);
@@ -108,14 +108,14 @@ public class GmoCloud {
         return executeGetRequest(queryParameters);
     }
 
-    public String getNodeJSON(String virtual_machine_id)
+    public String getNodeJson(String virtual_machine_id)
             throws InvalidKeyException, NoSuchAlgorithmException, IOException {
         TreeMap<String, String> queryParameters = createQueryParameters("getNode");
         addMandatoryParameter(queryParameters, "virtual_machine_id", virtual_machine_id);
         return executeGetRequest(queryParameters);
     }
 
-    public String startupNodeJSON(String Identifier,
+    public String startupNodeJson(String Identifier,
                                   String Recovery)
             throws InvalidKeyException, NoSuchAlgorithmException, IOException {
         TreeMap<String, String> queryParameters = createQueryParameters("startupNode");
@@ -124,7 +124,7 @@ public class GmoCloud {
         return executeGetRequest(queryParameters);
     }
 
-    public String shutdownNodeJSON(String Identifier,
+    public String shutdownNodeJson(String Identifier,
                                    String Recovery)
             throws InvalidKeyException, NoSuchAlgorithmException, IOException {
         TreeMap<String, String> queryParameters = createQueryParameters("shutdownNode");
@@ -133,7 +133,7 @@ public class GmoCloud {
         return executeGetRequest(queryParameters);
     }
 
-    public String buildNodeJSON(String Identifier,
+    public String buildNodeJson(String Identifier,
                                 String template_id,
                                 Integer required_startup)
             throws InvalidKeyException, NoSuchAlgorithmException, IOException {
@@ -144,14 +144,14 @@ public class GmoCloud {
         return executeGetRequest(queryParameters);
     }
 
-    public String rebuildNodeJSON(String Identifier)
+    public String rebuildNodeJson(String Identifier)
             throws InvalidKeyException, NoSuchAlgorithmException, IOException {
         TreeMap<String, String> queryParameters = createQueryParameters("rebuildNode");
         addMandatoryParameter(queryParameters, "Identifier", Identifier);
         return executeGetRequest(queryParameters);
     }
 
-    public String deployNodeJSON(String template_id,
+    public String deployNodeJson(String template_id,
                                  Integer cpu_shares,
                                  int cpus,
                                  String data_store_group_primary_id,
@@ -196,14 +196,14 @@ public class GmoCloud {
         return executeGetRequest(queryParameters);
     }
 
-    public String destroyNodeJSON(String Identifier)
+    public String destroyNodeJson(String Identifier)
             throws InvalidKeyException, NoSuchAlgorithmException, IOException {
         TreeMap<String, String> queryParameters = createQueryParameters("destroyNode");
         addMandatoryParameter(queryParameters, "Identifier", Identifier);
         return executeGetRequest(queryParameters);
     }
 
-    public String editNodeJSON(String Identifier,
+    public String editNodeJson(String Identifier,
                                String label,
                                String note)
             throws InvalidKeyException, NoSuchAlgorithmException, IOException {
@@ -214,14 +214,14 @@ public class GmoCloud {
         return executeGetRequest(queryParameters);
     }
 
-    public String resetPasswordNodeJSON(String Identifier)
+    public String resetPasswordNodeJson(String Identifier)
             throws InvalidKeyException, NoSuchAlgorithmException, IOException {
         TreeMap<String, String> queryParameters = createQueryParameters("resetPasswordNode");
         addMandatoryParameter(queryParameters, "Identifier", Identifier);
         return executeGetRequest(queryParameters);
     }
 
-    public String rebootNodeJSON(String Identifier,
+    public String rebootNodeJson(String Identifier,
                                  String Recovery)
             throws InvalidKeyException, NoSuchAlgorithmException, IOException {
         TreeMap<String, String> queryParameters = createQueryParameters("rebootNode");
@@ -230,7 +230,7 @@ public class GmoCloud {
         return executeGetRequest(queryParameters);
     }
 
-    public String migrateNodeJSON(String Identifier,
+    public String migrateNodeJson(String Identifier,
                                   String destination,
                                   Integer cold_migrate_on_rollback)
             throws InvalidKeyException, NoSuchAlgorithmException, IOException {
@@ -241,7 +241,7 @@ public class GmoCloud {
         return executeGetRequest(queryParameters);
     }
 
-    public String resizeNodeJSON(String Identifier,
+    public String resizeNodeJson(String Identifier,
                                  Integer allow_cold_resize,
                                  Integer cpu_shares,
                                  Integer cpus,
@@ -394,13 +394,13 @@ public class GmoCloud {
     // Network
     //----------------------------------------------------------------------------------------------------
 
-    public String listNetworksJSON(String Identifier)
+    public String listNetworksJson(String Identifier)
             throws InvalidKeyException, NoSuchAlgorithmException, IOException {
         TreeMap<String, String> queryParameters = createQueryParameters("listNetworks");
         return executeGetRequest(queryParameters);
     }
 
-    public String getNetworkJSON(String network_id,
+    public String getNetworkJson(String network_id,
                                  String Identifier)
             throws InvalidKeyException, NoSuchAlgorithmException, IOException {
         TreeMap<String, String> queryParameters = createQueryParameters("getNetwork");
@@ -409,7 +409,7 @@ public class GmoCloud {
         return executeGetRequest(queryParameters);
     }
 
-    public String rebuildNetworkJSON(String Identifier)
+    public String rebuildNetworkJson(String Identifier)
             throws InvalidKeyException, NoSuchAlgorithmException, IOException {
         TreeMap<String, String> queryParameters = createQueryParameters("rebuildNetwork");
         addMandatoryParameter(queryParameters, "Identifier", Identifier);
@@ -420,7 +420,7 @@ public class GmoCloud {
     // IP Address
     //----------------------------------------------------------------------------------------------------
 
-    public String listIpAddressesJSON(String network_id,
+    public String listIpAddressesJson(String network_id,
                                       String free,
                                       String Identifier)
             throws InvalidKeyException, NoSuchAlgorithmException, IOException {
@@ -431,7 +431,7 @@ public class GmoCloud {
         return executeGetRequest(queryParameters);
     }
 
-    public String getIpAddressJSON(String network_id,
+    public String getIpAddressJson(String network_id,
                                    String Identifier,
                                    String ip_address_id)
             throws InvalidKeyException, NoSuchAlgorithmException, IOException {
@@ -442,7 +442,7 @@ public class GmoCloud {
         return executeGetRequest(queryParameters);
     }
 
-    public String addIpJSON(String Identifier,
+    public String addIpJson(String Identifier,
                             String ip_address_id,
                             String network_interface_id)
             throws InvalidKeyException, NoSuchAlgorithmException, IOException {
@@ -453,7 +453,7 @@ public class GmoCloud {
         return executeGetRequest(queryParameters);
     }
 
-    public String deleteIpJSON(String Identifier,
+    public String deleteIpJson(String Identifier,
                                String ip_address_id)
             throws InvalidKeyException, NoSuchAlgorithmException, IOException {
         TreeMap<String, String> queryParameters = createQueryParameters("deleteIp");
@@ -466,14 +466,14 @@ public class GmoCloud {
     // Firewall Rule
     //----------------------------------------------------------------------------------------------------
 
-    public String listFirewallsJSON(String Identifier)
+    public String listFirewallsJson(String Identifier)
             throws InvalidKeyException, NoSuchAlgorithmException, IOException {
         TreeMap<String, String> queryParameters = createQueryParameters("listFirewalls");
         addMandatoryParameter(queryParameters, "Identifier", Identifier);
         return executeGetRequest(queryParameters);
     }
 
-    public String getFirewallJSON(String Identifier,
+    public String getFirewallJson(String Identifier,
                                   String firewall_id)
             throws InvalidKeyException, NoSuchAlgorithmException, IOException {
         TreeMap<String, String> queryParameters = createQueryParameters("getFirewall");
@@ -482,7 +482,7 @@ public class GmoCloud {
         return executeGetRequest(queryParameters);
     }
 
-    public String addFirewallJSON(String Identifier,
+    public String addFirewallJson(String Identifier,
                                   String address,
                                   String command,
                                   String port,
@@ -499,7 +499,7 @@ public class GmoCloud {
         return executeGetRequest(queryParameters);
     }
 
-    public String editFirewallJSON(String Identifier,
+    public String editFirewallJson(String Identifier,
                                    String address,
                                    String command,
                                    String firewall_id,
@@ -518,7 +518,7 @@ public class GmoCloud {
         return executeGetRequest(queryParameters);
     }
 
-    public String deleteFirewallJSON(String Identifier,
+    public String deleteFirewallJson(String Identifier,
                                      String firewall_id)
             throws InvalidKeyException, NoSuchAlgorithmException, IOException {
         TreeMap<String, String> queryParameters = createQueryParameters("deleteFirewall");
@@ -527,7 +527,7 @@ public class GmoCloud {
         return executeGetRequest(queryParameters);
     }
 
-    public String setFirewallDefaultJSON(String Identifier,
+    public String setFirewallDefaultJson(String Identifier,
                                          String default_firewall_rule,
                                          String network_interface_id)
             throws InvalidKeyException, NoSuchAlgorithmException, IOException {
@@ -538,7 +538,7 @@ public class GmoCloud {
         return executeGetRequest(queryParameters);
     }
 
-    public String applyFirewallJSON(String Identifier)
+    public String applyFirewallJson(String Identifier)
             throws InvalidKeyException, NoSuchAlgorithmException, IOException {
         TreeMap<String, String> queryParameters = createQueryParameters("applyFirewall");
         addMandatoryParameter(queryParameters, "Identifier", Identifier);
@@ -580,8 +580,192 @@ public class GmoCloud {
     }
 
     //----------------------------------------------------------------------------------------------------
-    // TODO Load Balancers
+    // Load Balancers
     //----------------------------------------------------------------------------------------------------
+
+    public String listClustersJson()
+            throws InvalidKeyException, NoSuchAlgorithmException, IOException {
+        TreeMap<String, String> queryParameters = createQueryParameters("listClusters");
+        return executeGetRequest(queryParameters);
+    }
+
+    public String getClusterJson(String cluster_id)
+            throws InvalidKeyException, NoSuchAlgorithmException, IOException {
+        TreeMap<String, String> queryParameters = createQueryParameters("getCluster");
+        addMandatoryParameter(queryParameters, "cluster_id", cluster_id);
+        return executeGetRequest(queryParameters);
+    }
+
+    public String editClusterJson(String cluster_id,
+                                  String label,
+                                  Integer rate_limit,
+                                  String ports)
+            throws InvalidKeyException, NoSuchAlgorithmException, IOException {
+        TreeMap<String, String> queryParameters = createQueryParameters("editCluster");
+        addMandatoryParameter(queryParameters, "cluster_id", cluster_id);
+        addOptionalParameter(queryParameters, "label", label);
+        addOptionalParameter(queryParameters, "rate_limit", rate_limit);
+        addOptionalParameter(queryParameters, "ports", ports);
+        return executeGetRequest(queryParameters);
+    }
+
+    public String deployClusteringBalancerJson(String label,
+                                               String hostname,
+                                               String hypervisor_group_id,
+                                               String hypervisor_id,
+                                               String nodes,
+                                               String primary_network_group_id,
+                                               int rate_limit,
+                                               String ports)
+            throws InvalidKeyException, NoSuchAlgorithmException, IOException {
+        TreeMap<String, String> queryParameters = createQueryParameters("deployClusteringBalancer");
+        addMandatoryParameter(queryParameters, "label", label);
+        addMandatoryParameter(queryParameters, "hostname", hostname);
+        addOptionalParameter(queryParameters, "hypervisor_group_id", hypervisor_group_id);
+        addOptionalParameter(queryParameters, "hypervisor_id", hypervisor_id);
+        addOptionalParameter(queryParameters, "nodes", nodes);
+        addOptionalParameter(queryParameters, "primary_network_group_id", primary_network_group_id);
+        addMandatoryParameter(queryParameters, "rate_limit", rate_limit);
+        addMandatoryParameter(queryParameters, "ports", ports);
+        return executeGetRequest(queryParameters);
+    }
+
+    public String addClusteringNodeJson(String cluster_id,
+                                        String nodes)
+            throws InvalidKeyException, NoSuchAlgorithmException, IOException {
+        TreeMap<String, String> queryParameters = createQueryParameters("addClusteringNode");
+        addMandatoryParameter(queryParameters, "cluster_id", cluster_id);
+        addMandatoryParameter(queryParameters, "nodes", nodes);
+        return executeGetRequest(queryParameters);
+    }
+
+    public String removeClusteringNode(String cluster_id,
+                                       String nodes)
+            throws InvalidKeyException, NoSuchAlgorithmException, IOException {
+        TreeMap<String, String> queryParameters = createQueryParameters("removeClusteringNodeJson");
+        addMandatoryParameter(queryParameters, "cluster_id", cluster_id);
+        addMandatoryParameter(queryParameters, "nodes", nodes);
+        return executeGetRequest(queryParameters);
+    }
+
+    public String destroyClusterJson(String cluster_id)
+            throws InvalidKeyException, NoSuchAlgorithmException, IOException {
+        TreeMap<String, String> queryParameters = createQueryParameters("destroyCluster");
+        addMandatoryParameter(queryParameters, "cluster_id", cluster_id);
+        return executeGetRequest(queryParameters);
+    }
+
+    public String deployAutoScalingBalancerJson(Integer autoscaling_in_cpu,
+                                                Integer autoscaling_in_memory,
+                                                Integer autoscaling_out_cpu,
+                                                Integer autoscaling_out_memory,
+                                                String label,
+                                                String hostname,
+                                                String hypervisor_group_id,
+                                                String hypervisor_id,
+                                                int max_node_amount,
+                                                int min_node_amount,
+                                                Integer node_cpu_shares,
+                                                int node_cpus,
+                                                int node_memory,
+                                                int node_rate_limit,
+                                                String node_template_id,
+                                                String primary_network_group_id,
+                                                int rate_limit,
+                                                String ports)
+            throws InvalidKeyException, NoSuchAlgorithmException, IOException {
+        TreeMap<String, String> queryParameters = createQueryParameters("deployAutoScalingBalancer");
+        addOptionalParameter(queryParameters, "autoscaling_in_cpu", autoscaling_in_cpu);
+        addOptionalParameter(queryParameters, "autoscaling_in_memory", autoscaling_in_memory);
+        addOptionalParameter(queryParameters, "autoscaling_out_cpu", autoscaling_out_cpu);
+        addOptionalParameter(queryParameters, "autoscaling_out_memory", autoscaling_out_memory);
+        addMandatoryParameter(queryParameters, "label", label);
+        addMandatoryParameter(queryParameters, "hostname", hostname);
+        addOptionalParameter(queryParameters, "hypervisor_group_id", hypervisor_group_id);
+        addOptionalParameter(queryParameters, "hypervisor_id", hypervisor_id);
+        addMandatoryParameter(queryParameters, "max_node_amount", max_node_amount);
+        addMandatoryParameter(queryParameters, "min_node_amount", min_node_amount);
+        addOptionalParameter(queryParameters, "node_cpu_shares", node_cpu_shares);
+        addMandatoryParameter(queryParameters, "node_cpus", node_cpus);
+        addMandatoryParameter(queryParameters, "node_memory", node_memory);
+        addMandatoryParameter(queryParameters, "node_rate_limit", node_rate_limit);
+        addMandatoryParameter(queryParameters, "node_template_id", node_template_id);
+        addOptionalParameter(queryParameters, "primary_network_group_id", primary_network_group_id);
+        addMandatoryParameter(queryParameters, "rate_limit", rate_limit);
+        addMandatoryParameter(queryParameters, "ports", ports);
+        return executeGetRequest(queryParameters);
+    }
+
+    public String editAutoScalingBalancerJson(String cluster_id,
+                                              Integer autoscaling_in_cpu,
+                                              Integer autoscaling_in_memory,
+                                              Integer autoscaling_out_cpu,
+                                              Integer autoscaling_out_memory,
+                                              Integer max_node_amount,
+                                              Integer min_node_amount)
+            throws InvalidKeyException, NoSuchAlgorithmException, IOException {
+        TreeMap<String, String> queryParameters = createQueryParameters("editAutoScalingBalancerJson");
+        addMandatoryParameter(queryParameters, "cluster_id", cluster_id);
+        addOptionalParameter(queryParameters, "autoscaling_in_cpu", autoscaling_in_cpu);
+        addOptionalParameter(queryParameters, "autoscaling_in_memory", autoscaling_in_memory);
+        addOptionalParameter(queryParameters, "autoscaling_out_cpu", autoscaling_out_cpu);
+        addOptionalParameter(queryParameters, "autoscaling_out_memory", autoscaling_out_memory);
+        addOptionalParameter(queryParameters, "max_node_amount", max_node_amount);
+        addOptionalParameter(queryParameters, "min_node_amount", min_node_amount);
+        return executeGetRequest(queryParameters);
+    }
+
+    public String listBalancersJson()
+            throws InvalidKeyException, NoSuchAlgorithmException, IOException {
+        TreeMap<String, String> queryParameters = createQueryParameters("listBalancers");
+        return executeGetRequest(queryParameters);
+    }
+
+    public String getBalancerJson(String load_balancer_id)
+            throws InvalidKeyException, NoSuchAlgorithmException, IOException {
+        TreeMap<String, String> queryParameters = createQueryParameters("getBalancer");
+        addMandatoryParameter(queryParameters, "load_balancer_id", load_balancer_id);
+        return executeGetRequest(queryParameters);
+    }
+
+    public String shutdownBalancerJson(String Identifier)
+            throws InvalidKeyException, NoSuchAlgorithmException, IOException {
+        TreeMap<String, String> queryParameters = createQueryParameters("shutdownBalancer");
+        addMandatoryParameter(queryParameters, "Identifier", Identifier);
+        return executeGetRequest(queryParameters);
+    }
+
+    public String startupBalancerJson(String Identifier)
+            throws InvalidKeyException, NoSuchAlgorithmException, IOException {
+        TreeMap<String, String> queryParameters = createQueryParameters("startupBalancer");
+        addMandatoryParameter(queryParameters, "Identifier", Identifier);
+        return executeGetRequest(queryParameters);
+    }
+
+    public String rebootBalancerJson(String Identifier)
+            throws InvalidKeyException, NoSuchAlgorithmException, IOException {
+        TreeMap<String, String> queryParameters = createQueryParameters("rebootBalancer");
+        addMandatoryParameter(queryParameters, "Identifier", Identifier);
+        return executeGetRequest(queryParameters);
+    }
+
+    public String rebuildBalancerJson(String Identifier)
+            throws InvalidKeyException, NoSuchAlgorithmException, IOException {
+        TreeMap<String, String> queryParameters = createQueryParameters("rebuildBalancer");
+        addMandatoryParameter(queryParameters, "Identifier", Identifier);
+        return executeGetRequest(queryParameters);
+    }
+
+    public String migrateBalancerJson(String Identifier,
+                                      String destination,
+                                      Integer cold_migrate_on_rollback)
+            throws InvalidKeyException, NoSuchAlgorithmException, IOException {
+        TreeMap<String, String> queryParameters = createQueryParameters("migrateBalancer");
+        addMandatoryParameter(queryParameters, "Identifier", Identifier);
+        addMandatoryParameter(queryParameters, "destination", destination);
+        addOptionalParameter(queryParameters, "cold_migrate_on_rollback", cold_migrate_on_rollback);
+        return executeGetRequest(queryParameters);
+    }
 
     //----------------------------------------------------------------------------------------------------
     // Resources
