@@ -1,4 +1,9 @@
 *.class
+*.iml
+.idea
+out/
+classes/
+srcTest/
 
 # Package Files #
 *.jar
