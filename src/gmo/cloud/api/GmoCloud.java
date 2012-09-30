@@ -32,7 +32,7 @@ import java.util.TreeMap;
 /**
  * GMO Cloud API client.
  * Pass null for the optional parameters, if you don't need it.
- *
+ * <p/>
  * Dependency: Apache HttpClient 4.x, Apache Commons Codec, Apache Commons Logging
  */
 public class GmoCloud {
@@ -537,12 +537,14 @@ public class GmoCloud {
     }
 
     private static void addOptionalParameter(TreeMap<String, String> queryParameters,
-                                              String key, String value) {
-        queryParameters.put(key, value);
+                                             String key, String value) {
+        if (value != null) {
+            queryParameters.put(key, value);
+        }
     }
 
     private static void addOptionalParameter(TreeMap<String, String> queryParameters,
-                                              String key, Integer value) {
+                                             String key, Integer value) {
         if (value != null) {
             queryParameters.put(key, value.toString());
         }
