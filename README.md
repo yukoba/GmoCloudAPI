@@ -18,4 +18,4 @@ Dependency
 
 License
 -------------
-New BSD License
+Apache License 2.0
