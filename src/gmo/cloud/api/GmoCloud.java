@@ -124,12 +124,10 @@ public class GmoCloud {
         return executeGetRequest(queryParameters);
     }
 
-    public String shutdownNodeJson(String Identifier,
-                                   String Recovery)
+    public String shutdownNodeJson(String Identifier)
             throws InvalidKeyException, NoSuchAlgorithmException, IOException {
         TreeMap<String, String> queryParameters = createQueryParameters("shutdownNode");
         addMandatoryParameter(queryParameters, "Identifier", Identifier);
-        addMandatoryParameter(queryParameters, "Recovery", Recovery);
         return executeGetRequest(queryParameters);
     }
 
